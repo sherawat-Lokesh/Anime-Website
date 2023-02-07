@@ -79,7 +79,9 @@ h2,p{
 .link{
     cursor: pointer;
 }
-
+a{
+    text-decoration: none;
+}
 
 /* right side cards */
 
