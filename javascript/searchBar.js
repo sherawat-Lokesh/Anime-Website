@@ -1,25 +1,20 @@
-'use strict'
-const cards= document.querySelector('.cards')
-const logo =document.querySelector('.logo')
-const searchBar=document.querySelector('.search-bar')
-const animeMovies=document.querySelector('.anime-movies')
-const recentEpisodes=document.querySelector('.recent-episodes')
-const popular= document.querySelector('.popular')
-
-logo.addEventListener('click',(e)=>{
-        run()
-    })
+"use strict"
 
 
 
+searchBar.addEventListener('keypress',(e)=>{
+    if(e.key ==='Enter' && searchBar.value.trim().replace(/[0-9]/g,'') !==''){
+        search(searchBar.value)
+    }
+})
 
-async function run(){
+async function search(animeName = "naruto"){
 
-  const response = await  fetch("https://gogoanime.consumet.stream/top-airing")
-  const res= await response.json()
-
+   const response = await fetch(`https://gogoanime.consumet.stream/search?keyw=${animeName.toLowerCase()}`)
+   const res= await response.json()
     cards.innerHTML=''
-    res.forEach((element,i) => {
+
+     res.forEach((element,i) => {
 
         const html=`
                     <div class="card">
@@ -27,8 +22,7 @@ async function run(){
                         <div class="card-info">
                             <div class="titles">
                                 <h2>${element.animeTitle.length<25?element.animeTitle.toUpperCase() :(element.animeTitle).substring(0,20).toUpperCase()+'...'}</h2>
-                                <p>Type : ${element.genres[0]}, ${element.genres[1]}</p>
-                                <p>Recent  ${element.latestEp}</p>
+                                <p>${element.status}</p>
                             </div>
                             <div>
                                 <a class="watch-here" href="${element.animeUrl}" >Watch Here</a>
@@ -40,4 +34,3 @@ async function run(){
                     });
 
 }
-run()

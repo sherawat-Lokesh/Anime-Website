@@ -5,8 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anime By sherawat</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="./Images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./Images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./Images/favicon-16x16.png">
+    <link rel="manifest" href="./Images/site.webmanifest">
+
     <link rel="stylesheet" href="./css/style.css">
     <script src="./javascript/home.js" defer></script>
+    <script src="./javascript/searchBar.js" defer></script>
+    <script src="./javascript/animeMovies.js" defer></script>
+    <script src="./javascript/recentEpisode.js" defer></script>
+    <script src="./javascript/popular.js" defer></script>
 </head>
 
 <body>
@@ -15,17 +24,21 @@
             <div class="dashboard">
                 <div class="logo"><img src="./Images/Anime.png" alt="logo"></div>
                 <div class="links">
-                    <div class="link">
-                        <h2>Anime Movies</h2>
+                    <div class="link popular">
+                        <h2>Popular</h2>
                     </div>
-                    <div class="link">
+                    <div class="link anime-movies">
+                        <h2 >Anime Movies</h2>
+                    </div>
+                    <div class="link recent-episodes">
                         <h2>Recent Episodes</h2>
                     </div>
+                    
                 </div>
             </div>
             <div class="card-right">
                 <div class="status">
-                    <input type="text" required min="2" placeholder="Search Anime here...">
+                    <input class="search-bar" type="text" required min="2" placeholder="Search Anime here...">
                 </div>
                 <div class="cards">
 
