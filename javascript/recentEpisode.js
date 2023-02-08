@@ -7,7 +7,7 @@ recentEpisodes.addEventListener("click",(e)=>{
 async function recentEpisode(){
    const response=await fetch("https://gogoanime.consumet.stream/recent-release")
     const res=await response.json()
-
+    console.log(res)
 
     cards.innerHTML=''
     res.forEach((element,i) => {

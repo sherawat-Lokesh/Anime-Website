@@ -1,14 +1,16 @@
 'use strict'
 const cards= document.querySelector('.cards')
-const logo =document.querySelector('.logo')
+const logo =document.querySelectorAll('.logo')
 const searchBar=document.querySelector('.search-bar')
 const animeMovies=document.querySelector('.anime-movies')
 const recentEpisodes=document.querySelector('.recent-episodes')
 const popular= document.querySelector('.popular')
 
-logo.addEventListener('click',(e)=>{
+logo.forEach(val=>{
+    val.addEventListener('click',(e)=>{
         run()
     })
+})
 
 
 
