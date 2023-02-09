@@ -62,10 +62,10 @@ main{
     align-items: center;
     padding-bottom: 3rem;
     justify-content: space-evenly;
-    transition:all 0.35s out;
+    transition:all 0.35s ease-out;
 }
 .logo:hover{
-    transform: translateZ(125px);
+    transform:translateZ(125px);
 }
 .link{
     padding: 1rem;
